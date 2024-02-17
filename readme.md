@@ -25,7 +25,7 @@
 
 - In order to use the template included in this zip, go to google sheets and create a new spreadsheet and press on file > open > upload > and take the template.csv file in this folder and drag it into the upload
 - Google sheets should then open up a page like this with headings such as CL Name(s), Residential Area, etc.
-  ![https://imgur.com/22gF2ko](https://imgur.com/22gF2ko)
+  ![Imgur Image](https://i.imgur.com/22gF2ko.png)
 - Fill out the template and download it as a csv (important)
   - drag the downloaded file into the directory that the automation script is saved in and rename the file to `walkThrough.csv`
     - Note: if you don't do this and rename it correctly, the script won't work
@@ -52,6 +52,8 @@
 
   - It should look like: /Users/{your username here}/Library /Application Support/Google/Chrome/Profile 1
   - After this, paste that into the `userPath` variable in `main()` (surrounded by `''`)
+
+- After this, manually go to the google form and copy the link and paste it in the `userPath` variable
 
 - Now we can run the script
   - You can do this by either right clicking anywhere when you are looking at the `walkthroughautomation.py` file and pressing run code, or by pressing the "play" button in the upper right corner of vscode

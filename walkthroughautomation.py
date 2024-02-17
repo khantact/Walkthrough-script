@@ -5,24 +5,22 @@ import time
 from datetime import date
 import csv
 
-def setup(path):
+def setup(path, formLink):
     chrome_options = Options() 
     chrome_options.add_experimental_option("detach", True)
     chrome_options.add_argument("--user-data-dir="+path)
 
     web = webdriver.Chrome(options=chrome_options)
-    web.get('https://docs.google.com/forms/d/e/1FAIpQLSf3XYUZYB9X5h8FcrEqaFswzpyL6JwJxi_DTYOtZWq_zso4SA/viewform?vc=0&c=0&w=1&flr=0')
+    web.get(formLink)
     return web
 # login 
 def login(username, password, web):
-    username = 'khan@colgate.edu'
     usern = web.find_element('xpath', '//*[@id="identifierId"]')
     usern.send_keys(username)
 
     continuebutton = web.find_element('xpath', '//*[@id="identifierNext"]/div/button')
     continuebutton.click()
 
-    password = 'Aszf9970!'
     time.sleep(2)
     passEntry =  web.find_element(By.CSS_SELECTOR, ("input[type='password']"))
     passEntry.send_keys(password)
@@ -88,8 +86,9 @@ def thirdPageForm(request, web):
 def main():
     # replace this with your google chrome profile path, or use the login function
     # You can find the google chrome profile path by going to chrome://version and copy the profile path bit
-    userPath = '/Users/Kkhhh/Library/Application Support/Google/Chrome/Profile 1'
-    web = setup(userPath)
+    userPath = 'paste user path in here'
+    formLink = 'paste google form link in here'
+    web = setup(userPath, formLink)
     # if the above does not work or you can't find it, put your username and password in here and also uncomment the bottom 3 lines of code
     # username = 'insert email here'
     # password = 'insert password here'
