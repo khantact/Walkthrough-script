@@ -56,5 +56,6 @@
 - After this, manually go to the google form and copy the link and paste it in the `userPath` variable
 
 - Now we can run the script
+  - Close out of any existing chrome tabs as it will mess up the script
   - You can do this by either right clicking anywhere when you are looking at the `walkthroughautomation.py` file and pressing run code, or by pressing the "play" button in the upper right corner of vscode
   - When the script is done, it should print `All Done!` in the output terminal
